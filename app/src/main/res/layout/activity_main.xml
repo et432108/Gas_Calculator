@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/calc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculate!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avgSpeed"
+        app:layout_constraintVertical_bias="0.12" />
+
+    <TextView
+        android:id="@+id/gasCalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Gasoline\n Calculator "
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.065" />
+
+    <TextView
+        android:id="@+id/costLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cost per Gallon"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/distanceLabel"
+        app:layout_constraintVertical_bias="0.032" />
+
+    <TextView
+        android:id="@+id/needAC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Need A/C?"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aggroDriverLabel"
+        app:layout_constraintVertical_bias="0.06" />
+
+    <TextView
+        android:id="@+id/highwayLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Highway MPG"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/costLabel"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <TextView
+        android:id="@+id/distanceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Distance"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gasImage"
+        app:layout_constraintVertical_bias="0.042" />
+
+    <TextView
+        android:id="@+id/roadType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Road Type"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aggroDriverLabel"
+        app:layout_constraintVertical_bias="0.184" />
+
+    <Spinner
+        android:id="@+id/listType"
+        android:layout_width="194dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="76dp"
+        android:entries="@array/listRoadTypes"
+        app:layout_constraintBottom_toBottomOf="@+id/roadType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toEndOf="@+id/roadType"
+        app:layout_constraintTop_toTopOf="@+id/roadType"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <RadioGroup
+        android:layout_width="205dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/needAC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.797"
+        app:layout_constraintStart_toEndOf="@+id/needAC"
+        app:layout_constraintTop_toTopOf="@+id/needAC"
+        app:layout_constraintVertical_bias="0.652">
+
+        <RadioButton
+            android:id="@+id/yes"
+            android:layout_width="65dp"
+            android:layout_height="48dp"
+            android:text="Yes" />
+
+        <RadioButton
+            android:id="@+id/no"
+            android:layout_width="65dp"
+            android:layout_height="48dp"
+            android:text="No" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/editCost"
+        android:layout_width="212dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="18dp"
+        android:ems="10"
+        android:hint="Please enter the cost per"
+        android:inputType="numberDecimal"
+        android:textColor="#CEC6C6"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/costLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.585"
+        app:layout_constraintRight_toRightOf="@id/distanceLabel"
+        app:layout_constraintStart_toEndOf="@+id/costLabel"
+        app:layout_constraintTop_toTopOf="@+id/costLabel"
+        app:layout_constraintVertical_bias="0.435" />
+
+    <EditText
+        android:id="@+id/editHighway"
+        android:layout_width="212dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="23dp"
+        android:ems="10"
+        android:hint="Please enter the vehicle miles"
+        android:inputType="numberDecimal"
+        android:textColor="#CEC6C6"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/highwayLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintRight_toRightOf="@id/distanceLabel"
+        app:layout_constraintStart_toEndOf="@+id/costLabel"
+        app:layout_constraintTop_toTopOf="@+id/highwayLabel"
+        app:layout_constraintVertical_bias="0.361" />
+
+    <ImageView
+        android:id="@+id/gasImage2"
+        android:layout_width="63dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="@+id/gasCalc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toEndOf="@+id/gasCalc"
+        app:layout_constraintTop_toTopOf="@+id/gasCalc"
+        app:layout_constraintVertical_bias="0.8"
+        app:srcCompat="@drawable/gascan" />
+
+    <EditText
+        android:id="@+id/editNumDist"
+        android:layout_width="212dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="15dp"
+        android:ems="10"
+        android:hint="Please enter the distance"
+        android:inputType="numberDecimal"
+        android:textColor="#CEC6C6"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/distanceLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.822"
+        app:layout_constraintRight_toRightOf="@id/distanceLabel"
+        app:layout_constraintStart_toEndOf="@+id/distanceLabel"
+        app:layout_constraintTop_toTopOf="@+id/distanceLabel"
+        app:layout_constraintVertical_bias="0.583" />
+
+    <TextView
+        android:id="@+id/aggroDriverLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aggressive Driver?"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/costLabel"
+        app:layout_constraintVertical_bias="0.138" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/aggroDriverLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/aggroDriverLabel"
+        app:layout_constraintTop_toTopOf="@+id/aggroDriverLabel"
+        app:layout_constraintVertical_bias="0.619" />
+
+    <TextView
+        android:id="@+id/avgSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Average Speed"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aggroDriverLabel"
+        app:layout_constraintVertical_bias="0.31" />
+
+    <SeekBar
+        android:id="@+id/speedBar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="177dp"
+        android:layout_height="22dp"
+        android:max="7"
+        android:min="0"
+        android:progress="5"
+        app:layout_constraintBottom_toBottomOf="@+id/avgSpeed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintStart_toEndOf="@+id/avgSpeed"
+        app:layout_constraintTop_toTopOf="@+id/avgSpeed"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/speedNum"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/calc"
+        app:layout_constraintEnd_toEndOf="@+id/speedBar"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="@+id/speedBar"
+        app:layout_constraintTop_toBottomOf="@+id/speedBar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/costTrip"
+        android:layout_width="314dp"
+        android:layout_height="99dp"
+        android:gravity="center"
+        android:text="You'll need to spend this\nmuch on a road trip:\n$0.00"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aggroDriverLabel"
+        app:layout_constraintVertical_bias="0.694" />
+
+    <ImageView
+        android:id="@+id/gasImage"
+        android:layout_width="63dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="@+id/gasCalc"
+        app:layout_constraintEnd_toStartOf="@+id/gasCalc"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/gasCalc"
+        app:layout_constraintVertical_bias="0.8"
+        app:srcCompat="@drawable/gascan" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
